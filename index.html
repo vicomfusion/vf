@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VicomFusion WiFi Builder</title>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+  }
+  h1 {
+    color: #009688;
+  }
+  .definition {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .swiper-container {
+    margin-top: 30px;
+  }
+  .swiper-slide {
+    text-align: center;
+  }
+  button {
+    padding: 15px 30px;
+    margin: 10px;
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .swiper-pagination-bullet {
+    background-color: #009688;
+  }
+  footer {
+    padding: 10px 0;
+    background-color: #009688;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>VicomFusion WiFi Builder</h1>
+  <div class="definition">
+    <p>VicomFusion WiFi Builder is a platform dedicated to building WiFi vending machines to help communities connect to the internet. Our mission is to bridge the digital divide by providing accessible internet connectivity solutions.</p>
+  </div>
+  <h2>What do you want to do?</h2>
+  <p>Swipe to choose:</p>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><button onclick="location.href='make-wifi-rates.html'">Make WiFi Rates</button></div>
+      <div class="swiper-slide"><button onclick="location.href='partner-sales-distribution.html'">Partner Sales Distribution</button></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<footer>
+  <p>Powered by: VicomFusion</p>
+</footer>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  var buttonSwiper = new Swiper('.swiper-container', {
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      768: {
+        spaceBetween: 40,
+      }
+    }
+  });
+</script>
+</body>
+</html>
