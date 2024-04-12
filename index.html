@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>VicomFusion WiFi Builder</title>
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 <style>
@@ -17,10 +17,11 @@
     min-height: 100vh;
   }
   .container {
-    width: 80%;
+    width: 100%;
+    max-width: 600px; /* Adjust max-width as needed */
     margin: auto;
     padding: 20px;
-    text-align: center;
+    text-align: center; /* Center the content */
     flex: 1;
   }
   h1 {
@@ -32,12 +33,9 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  .swiper-container {
-    margin-top: 30px;
-  }
-  .swiper-slide {
-    text-align: center;
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    overflow-y: auto; /* Enable scrolling on overflow */
+    max-height: 300px; /* Adjust max height as needed */
   }
   button {
     padding: 15px 30px;
@@ -48,16 +46,12 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  .swiper-pagination-bullet {
-    background-color: #009688;
-  }
   footer {
     padding: 10px 0;
-    background-color: #009688;
-    color: #fff;
+    color: #009688;
     text-align: center;
+    margin-top: auto;
     width: 100%;
-    flex-shrink: 0;
   }
 </style>
 </head>
@@ -67,41 +61,15 @@
   <div class="definition">
     <p>VicomFusion WiFi Builder is a platform dedicated to building WiFi vending machines to help communities connect to the internet. Our mission is to bridge the digital divide by providing accessible internet connectivity solutions.</p>
   </div>
-  <h2>What do you want to do?</h2>
-  <p>Swipe to choose:</p>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><button onclick="window.open('https://vicomfusion.github.io/shares/', '_blank')">Make WiFi Rates</button></div>
-      <div class="swiper-slide"><button onclick="window.open('https://vicomfusion.github.io/vfrates/', '_blank')">Partner Sales Distribution</button></div>
-    </div>
-    <div class="swiper-pagination"></div>
+  <div class="choose-text">
+    <p><strong>What do you want to do?</strong></p>
   </div>
+  <button onclick="window.open('https://vicomfusion.github.io/shares/', '_blank')">Make WiFi Rates</button>
+  <button onclick="window.open('https://vicomfusion.github.io/vfrates/', '_blank')">Partner Sales Distribution</button>
 </div>
 
 <footer>
   <p>Powered by: VicomFusion</p>
 </footer>
-
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  var buttonSwiper = new Swiper('.swiper-container', {
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    spaceBetween: 20,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      768: {
-        spaceBetween: 40,
-      }
-    }
-  });
-</script>
 </body>
 </html>
