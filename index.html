@@ -16,10 +16,11 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    flex-direction: column;
   }
   .container {
     width: 100vw;
-   margin-top: -90px;
+    margin-top: -90px;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
@@ -37,11 +38,11 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
-    overflow-y: auto; /* Enable scrolling on overflow */
-    max-height: calc(100vh - 200px); /* Adjust max height as needed */
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
     width: 90%;
-    max-width: 500px; /* Adjust max-width as needed */
+    max-width: 500px;
   }
   button {
     padding: 15px 30px;
@@ -60,11 +61,28 @@
     position: absolute;
     bottom: 0;
   }
+  .clock-container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .digital-clock {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
 </style>
 </head>
 <body>
 <div class="container">
- <img src="https://vicomfusion.github.io/vficons/icon.png" alt="vicon">  <h1>VicomFusion WiFi Builder</h1>
+<div style="margin-top:20px;"></div>
+  <img src="https://vicomfusion.github.io/vficons/icon.png" alt="vicon">
+  <div style="margin-top:-20px;"></div>
+  <h1>VicomFusion WiFi Builder</h1>
+    <div class="clock-container">
+    <div class="digital-clock" id="digitalClock"></div>
+  </div>
+  <div style="margin-top:-60px;"></div>
   <div class="definition">
     <p>VicomFusion WiFi Builder is a platform dedicated to building WiFi vending machines to help communities connect to the internet. Our mission is to bridge the digital divide by providing accessible internet connectivity solutions.</p>
   </div>
@@ -74,10 +92,24 @@
   <button onclick="window.open('https://vicomfusion.github.io/vfrates/', '_blank')">🛜 Make WiFi Rates</button>
   <button onclick="window.open('https://vicomfusion.github.io/shares/', '_blank')">🤝 Partner Sales Distribution</button>
   <button onclick="window.open('https://vicomfusion.github.io/burstRateSpeed/', '_blank')">💥Generate Burst Rate Speed</button>
+  
+
 </div>
 
 <footer>
   <p>Powered by: VicomFusion</p>
 </footer>
+
+<script>
+  function updateClocks() {
+    const now = new Date();
+    // Update digital clock
+    const digitalClock = document.getElementById('digitalClock');
+    digitalClock.textContent = now.toLocaleTimeString();
+  }
+  
+  setInterval(updateClocks, 1000);
+  updateClocks(); // initial call
+</script>
 </body>
 </html>
