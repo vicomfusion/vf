@@ -13,14 +13,11 @@
     background-color: #f5f5f5;
     color: #333;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     flex-direction: column;
+    min-height: 100vh;
   }
   .container {
-    width: 100vw;
-    margin-top: -90px;
+    flex: 1;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
@@ -38,28 +35,42 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    -webkit-overflow-scrolling: touch;
     overflow-y: auto;
-    max-height: calc(100vh - 200px);
+    max-height: calc(100vh - 400px);
     width: 90%;
     max-width: 500px;
   }
-  button {
-    padding: 15px 30px;
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+  }
+  .button {
+    padding: 20px;
     margin: 10px;
     background-color: #009688;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 300px;
+  }
+  .button span {
+    margin-top: 10px;
+    font-size: 0.9em;
   }
   footer {
     padding: 10px 0;
     color: #009688;
     text-align: center;
     width: 100%;
-    position: absolute;
-    bottom: 0;
   }
   .clock-container {
     margin-bottom: 20px;
@@ -75,25 +86,31 @@
 </head>
 <body>
 <div class="container">
-<div style="margin-top:20px;"></div>
   <img src="https://vicomfusion.github.io/vficons/icon.png" alt="vicon">
-  <div style="margin-top:-20px;"></div>
   <h1>VicomFusion WiFi Builder</h1>
-    <div class="clock-container">
+  <div class="clock-container">
     <div class="digital-clock" id="digitalClock"></div>
   </div>
-  <div style="margin-top:-60px;"></div>
   <div class="definition">
     <p>VicomFusion WiFi Builder is a platform dedicated to building WiFi vending machines to help communities connect to the internet. Our mission is to bridge the digital divide by providing accessible internet connectivity solutions.</p>
   </div>
   <div class="choose-text">
     <p><strong>What do you want to do?</strong></p>
   </div>
-  <button onclick="window.open('https://vicomfusion.github.io/vfrates/', '_blank')">🛜 Make WiFi Rates</button>
-  <button onclick="window.open('https://vicomfusion.github.io/shares/', '_blank')">🤝 Partner Sales Distribution</button>
-  <button onclick="window.open('https://vicomfusion.github.io/burstRateSpeed/', '_blank')">💥Generate Burst Rate Speed</button>
-  
-
+  <div class="button-container">
+    <button class="button" onclick="window.open('https://vicomfusion.github.io/vfrates/', '_blank')">
+      🛜
+      <span>Make WiFi Rates</span>
+    </button>
+    <button class="button" onclick="window.open('https://vicomfusion.github.io/shares/', '_blank')">
+      🤝
+      <span>Partner Sales Distribution</span>
+    </button>
+    <button class="button" onclick="window.open('https://vicomfusion.github.io/burstRateSpeed/', '_blank')">
+      💥
+      <span>Generate Burst Rate Speed</span>
+    </button>
+  </div>
 </div>
 
 <footer>
